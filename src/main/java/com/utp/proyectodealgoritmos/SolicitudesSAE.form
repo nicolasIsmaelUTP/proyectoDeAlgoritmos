@@ -35,11 +35,11 @@
                           <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="btn_generarNumero" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btn_info" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <Component id="btn_solicitar" min="-2" pref="111" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="45" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" pref="218" max="-2" attributes="0"/>
@@ -76,7 +76,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="tf_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_generarNumero" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_info" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="btn_solicitar" min="-2" max="-2" attributes="0"/>
@@ -115,7 +115,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Informaci&#xf3;n de contacto:"/>
+        <Property name="text" type="java.lang.String" value="Ingrese su n&#xfa;mero de tel&#xe9;fono:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="cb_tipo">
@@ -143,6 +143,9 @@
           <Font name="Dialog" size="18" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_telefonoActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -211,7 +214,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_llamarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_generarNumero">
+    <Component class="javax.swing.JButton" name="btn_info">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="18" style="0"/>
@@ -219,7 +222,7 @@
         <Property name="text" type="java.lang.String" value="?"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_generarNumeroActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_infoActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
