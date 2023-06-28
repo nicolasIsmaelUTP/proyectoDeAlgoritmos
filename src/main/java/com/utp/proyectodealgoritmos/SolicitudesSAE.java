@@ -3,7 +3,6 @@ package com.utp.proyectodealgoritmos;
 import javax.swing.DefaultListModel;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +10,7 @@ import javax.swing.JOptionPane;
  * @author NICOLAS
  */
 public class SolicitudesSAE extends javax.swing.JFrame {
+
     Queue<Solicitud> solicitudes = new LinkedList<>();
     int cantidadMaxima = 5;
     DefaultListModel<String> modelo = new DefaultListModel<>();
@@ -34,7 +34,7 @@ public class SolicitudesSAE extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -49,7 +49,7 @@ public class SolicitudesSAE extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         tf_pendientes = new javax.swing.JTextField();
         btn_llamar = new javax.swing.JButton();
-        btn_generarNumero = new javax.swing.JButton();
+        btn_info = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,13 +60,17 @@ public class SolicitudesSAE extends javax.swing.JFrame {
         jLabel2.setText("Tipo:");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel3.setText("Información de contacto:");
+        jLabel3.setText("Ingrese su número de teléfono:");
 
         cb_tipo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        cb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción a cursos",
-                "Cambio de horario", "Solicitud de documentos", "Solicitud de becas", "Cambio de carrera" }));
+        cb_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Inscripción a cursos", "Cambio de horario", "Solicitud de documentos", "Solicitud de becas", "Cambio de carrera" }));
 
         tf_telefono.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        tf_telefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_telefonoActionPerformed(evt);
+            }
+        });
 
         lst_solicitudes.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jScrollPane1.setViewportView(lst_solicitudes);
@@ -95,127 +99,105 @@ public class SolicitudesSAE extends javax.swing.JFrame {
             }
         });
 
-        btn_generarNumero.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btn_generarNumero.setText("?");
-        btn_generarNumero.addActionListener(new java.awt.event.ActionListener() {
+        btn_info.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btn_info.setText("?");
+        btn_info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_generarNumeroActionPerformed(evt);
+                btn_infoActionPerformed(evt);
             }
         });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                                false)
-                                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(cb_tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                Short.MAX_VALUE)
-                                                        .addComponent(tf_telefono)
-                                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(btn_generarNumero, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(btn_solicitar, javax.swing.GroupLayout.PREFERRED_SIZE, 111,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45,
-                                        Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 196,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 218,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btn_llamar, javax.swing.GroupLayout.PREFERRED_SIZE, 111,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tf_pendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(47, 47, 47)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cb_tipo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_telefono)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_info, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_solicitar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_llamar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_pendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47))
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel4))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(tf_pendientes, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(12, 12, 12)
-                                                .addComponent(jLabel3)
-                                                .addGap(18, 18, 18)
-                                                .addGroup(layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(tf_telefono,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(btn_generarNumero))
-                                                .addGap(28, 28, 28)
-                                                .addComponent(btn_solicitar))
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btn_llamar)
-                                .addContainerGap(40, Short.MAX_VALUE)));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cb_tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_pendientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tf_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_info))
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_solicitar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_llamar)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_generarNumeroActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_generarNumeroActionPerformed
-        // Generador de numero telefonico
-        Random random = new Random();
-        String numeroTelefonico = "9";
+    private void tf_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_telefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_telefonoActionPerformed
 
-        for (int i = 0; i < 8; i++) {
-            int digito = random.nextInt(10);
-            numeroTelefonico += digito;
-        }
-
-        tf_telefono.setText(numeroTelefonico);
-    }// GEN-LAST:event_btn_generarNumeroActionPerformed
+    private void btn_infoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_infoActionPerformed
+        JOptionPane.showMessageDialog(this, "Ejemplo de número a ingresar:\n994 622 032\n(Sin espacios todo junto)");
+    }// GEN-LAST:event_btn_infoActionPerformed
 
     private void btn_solicitarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_solicitarActionPerformed
         // Registrar solicitud
         if (solicitudes.size() < cantidadMaxima) {
             String telefono = tf_telefono.getText();
-            if (validarNumeroTelefonico(telefono)) {
-                String tipo = cb_tipo.getSelectedItem().toString();
-                solicitudes.add(new Solicitud(tipo, telefono));
-                // Actualizar pendientes y tabla
-                actualizarTabla();
-                // Limpiar campos
-                cb_tipo.setSelectedIndex(0);
-                tf_telefono.setText("");
-
-                JOptionPane.showMessageDialog(this,
-                        "Te llamaremos pronto al " + telefono + " para atender tu solicitud sobre " + tipo);
+            if (telefono.equals("")) {
+                JOptionPane.showMessageDialog(this, "Campo vacío, ingrese su número de teléfono");
             } else {
-                JOptionPane.showMessageDialog(this, "El número telefónico no es válido");
+                if (validarNumeroTelefonico(telefono)) {
+                    String tipo = cb_tipo.getSelectedItem().toString();
+                    solicitudes.add(new Solicitud(tipo, telefono));
+                    // Actualizar pendientes y tabla
+                    actualizarTabla();
+                    // Limpiar campos
+                    cb_tipo.setSelectedIndex(0);
+                    tf_telefono.setText("");
+
+                    JOptionPane.showMessageDialog(this,
+                            "Te llamaremos pronto al " + telefono + " para atender tu solicitud sobre " + tipo);
+                } else {
+                    JOptionPane.showMessageDialog(this, "El número telefónico no es válido");
+                }
             }
         } else {
             JOptionPane.showMessageDialog(this, "Inténtalo más tarde");
@@ -313,7 +295,7 @@ public class SolicitudesSAE extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_generarNumero;
+    private javax.swing.JButton btn_info;
     private javax.swing.JButton btn_llamar;
     private javax.swing.JButton btn_solicitar;
     private javax.swing.JComboBox<String> cb_tipo;
