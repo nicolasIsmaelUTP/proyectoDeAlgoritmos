@@ -4,11 +4,9 @@
  */
 package com.utp.proyectodealgoritmos;
 
-import java.awt.Desktop;
-
 /**
  *
- * @author ISAAC
+ * @author victo
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -28,133 +26,99 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_agregar = new javax.swing.JButton();
-        btn_buscar = new javax.swing.JButton();
-        btn_eliminar = new javax.swing.JButton();
-        btn_listar = new javax.swing.JButton();
-        Panel_Control = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btn_asist = new javax.swing.JButton();
+        btn_nots = new javax.swing.JButton();
+        btn_sae = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_agregar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btn_agregar.setText("AGREGAR");
-        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_agregarActionPerformed(evt);
-            }
-        });
-
-        btn_buscar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btn_buscar.setText("BUSCAR");
-        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_buscarActionPerformed(evt);
-            }
-        });
-
-        btn_eliminar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btn_eliminar.setText("ELIMINAR");
-        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_eliminarActionPerformed(evt);
-            }
-        });
-
-        btn_listar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        btn_listar.setText("LISTAR");
-        btn_listar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_listarActionPerformed(evt);
-            }
-        });
-
-        Panel_Control.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout Panel_ControlLayout = new javax.swing.GroupLayout(Panel_Control);
-        Panel_Control.setLayout(Panel_ControlLayout);
-        Panel_ControlLayout.setHorizontalGroup(
-            Panel_ControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        Panel_ControlLayout.setVerticalGroup(
-            Panel_ControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Emoji", 0, 18)); // NOI18N
-        jLabel1.setText("REGISTRO DE NOTAS ");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("Menu Principal ");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("PRINCIPAL");
+        jLabel2.setText("Universidad Tecnologica del Perú");
+
+        btn_asist.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_asist.setText("Registro de Asistencia");
+        btn_asist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_asistActionPerformed(evt);
+            }
+        });
+
+        btn_nots.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_nots.setText("Registro de Notas");
+        btn_nots.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_notsActionPerformed(evt);
+            }
+        });
+
+        btn_sae.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_sae.setText("Solicitudes Sae");
+        btn_sae.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_saeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btn_eliminar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_buscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
-                            .addComponent(btn_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Panel_Control))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(119, 622, Short.MAX_VALUE))))
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(14, 14, 14))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_asist, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
+                    .addComponent(btn_nots, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_sae, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addGap(78, 78, 78)
+                .addComponent(btn_asist, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_nots, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(37, 37, 37)
-                        .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_listar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 198, Short.MAX_VALUE))
-                    .addComponent(Panel_Control))
-                .addContainerGap())
+                .addComponent(btn_sae, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_listarActionPerformed
-        Panel_Control.removeAll();
-        Listar f4 = new Listar();
-        Panel_Control.add(f4).setVisible(true);    }//GEN-LAST:event_btn_listarActionPerformed
+    private void btn_asistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asistActionPerformed
+        RegistroDeAsistencia newframe = new RegistroDeAsistencia();
+        newframe.setVisible(true);
+        
 
-    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
-        Panel_Control.removeAll();
-        Eliminar f3 = new Eliminar();
-        Panel_Control.add(f3).setVisible(true);    }//GEN-LAST:event_btn_eliminarActionPerformed
+    }//GEN-LAST:event_btn_asistActionPerformed
 
-    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        Panel_Control.removeAll();
-        Buscar f2 = new Buscar();
-        Panel_Control.add(f2).setVisible(true);    }//GEN-LAST:event_btn_buscarActionPerformed
+    private void btn_notsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_notsActionPerformed
+     Registros newframe = new Registros();
+     newframe.setVisible(true);
+   
+    }//GEN-LAST:event_btn_notsActionPerformed
 
-    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
-        Panel_Control.removeAll();
-        Agregar f1 = new Agregar();
-        Panel_Control.add(f1).setVisible(true);
-    }//GEN-LAST:event_btn_agregarActionPerformed
+    private void btn_saeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saeActionPerformed
+    SolicitudesSAE newframe = new SolicitudesSAE();
+    newframe.setVisible(true);
+
+    }//GEN-LAST:event_btn_saeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +146,6 @@ public class Principal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -193,11 +156,9 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JDesktopPane Panel_Control;
-    private javax.swing.JButton btn_agregar;
-    private javax.swing.JButton btn_buscar;
-    private javax.swing.JButton btn_eliminar;
-    private javax.swing.JButton btn_listar;
+    private javax.swing.JButton btn_asist;
+    private javax.swing.JButton btn_nots;
+    private javax.swing.JButton btn_sae;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
