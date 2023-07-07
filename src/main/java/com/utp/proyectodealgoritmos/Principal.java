@@ -6,7 +6,7 @@ package com.utp.proyectodealgoritmos;
 
 /**
  *
- * @author victo
+ * @author Usuario
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -15,6 +15,10 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setSize(1000,600);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Proyecto");
+        this.setResizable(false);
     }
 
     /**
@@ -26,98 +30,56 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btn_asist = new javax.swing.JButton();
-        btn_nots = new javax.swing.JButton();
+        btn_asistencia = new javax.swing.JButton();
         btn_sae = new javax.swing.JButton();
+        btn_notas_cola = new javax.swing.JButton();
+        btn_notas_pila = new javax.swing.JButton();
+        btn_evaluador = new javax.swing.JButton();
+        panel = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Menu Principal ");
+        btn_asistencia.setText("Registro de asistencia");
+        getContentPane().add(btn_asistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setText("Universidad Tecnologica del Perú");
-
-        btn_asist.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_asist.setText("Registro de Asistencia");
-        btn_asist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_asistActionPerformed(evt);
-            }
-        });
-
-        btn_nots.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_nots.setText("Registro de Notas");
-        btn_nots.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_notsActionPerformed(evt);
-            }
-        });
-
-        btn_sae.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btn_sae.setText("Solicitudes Sae");
+        btn_sae.setText("Solicitudes SAE");
         btn_sae.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_saeActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_sae, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(14, 14, 14))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_asist, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                    .addComponent(btn_nots, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_sae, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        btn_notas_cola.setText("Registro de notas (colas)");
+        getContentPane().add(btn_notas_cola, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        btn_notas_pila.setText("Registro de notas (pilas)");
+        getContentPane().add(btn_notas_pila, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+
+        btn_evaluador.setText("Evaluador");
+        getContentPane().add(btn_evaluador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
+
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 790, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(78, 78, 78)
-                .addComponent(btn_asist, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_nots, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_sae, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
+
+        getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 790, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_asistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asistActionPerformed
-        RegistroDeAsistencia newframe = new RegistroDeAsistencia();
-        newframe.setVisible(true);
-        
-
-    }//GEN-LAST:event_btn_asistActionPerformed
-
-    private void btn_notsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_notsActionPerformed
-     Frm_registro_ambos newframe = new Frm_registro_ambos();
-     newframe.setVisible(true);
-   
-    }//GEN-LAST:event_btn_notsActionPerformed
-
     private void btn_saeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saeActionPerformed
-    SolicitudesSAE newframe = new SolicitudesSAE();
-    newframe.setVisible(true);
-
+        SolicitudesSAE ventana = new SolicitudesSAE();
+        panel.add(ventana);
+        ventana.setVisible(true);
     }//GEN-LAST:event_btn_saeActionPerformed
 
     /**
@@ -156,10 +118,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_asist;
-    private javax.swing.JButton btn_nots;
+    private javax.swing.JButton btn_asistencia;
+    private javax.swing.JButton btn_evaluador;
+    private javax.swing.JButton btn_notas_cola;
+    private javax.swing.JButton btn_notas_pila;
     private javax.swing.JButton btn_sae;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JDesktopPane panel;
     // End of variables declaration//GEN-END:variables
 }

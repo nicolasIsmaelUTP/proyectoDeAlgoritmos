@@ -8,7 +8,7 @@ import javax.swing.DefaultListModel;
  *
  * @author NICOLAS
  */
-public class RegistroDeAsistencia extends javax.swing.JFrame {
+public class RegistroDeAsistenciazzz extends javax.swing.JFrame {
     int cantidadAlumnos = 8, tolerancia = 15;
     Tiempo tiempo, finTolerancia;
     Stack pilaAlumnos = new Stack();
@@ -17,7 +17,7 @@ public class RegistroDeAsistencia extends javax.swing.JFrame {
     /**
      * Creates new form RegistroDeAsistencia
      */
-    public RegistroDeAsistencia() {
+    public RegistroDeAsistenciazzz() {
         // Tiempo con el que inicia el programa
         tiempo = new Tiempo(8, 53);
 
@@ -328,24 +328,25 @@ public class RegistroDeAsistencia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroDeAsistencia.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(RegistroDeAsistenciazzz.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroDeAsistencia.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(RegistroDeAsistenciazzz.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroDeAsistencia.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(RegistroDeAsistenciazzz.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroDeAsistencia.class.getName()).log(java.util.logging.Level.SEVERE,
+            java.util.logging.Logger.getLogger(RegistroDeAsistenciazzz.class.getName()).log(java.util.logging.Level.SEVERE,
                     null, ex);
         }
+        // </editor-fold>
         // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroDeAsistencia().setVisible(true);
+                new RegistroDeAsistenciazzz().setVisible(true);
             }
         });
     }
