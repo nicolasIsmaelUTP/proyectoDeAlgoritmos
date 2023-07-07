@@ -4,12 +4,20 @@
  */
 package com.utp.proyectodealgoritmos;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
  */
 public class SolicitudesSAE extends javax.swing.JInternalFrame {
-
+    Queue<Solicitud> solicitudes = new LinkedList<>();
+    int cantidadMaxima = 5;
+    DefaultListModel<String> modelo = new DefaultListModel<>();
+    
     /**
      * Creates new form SolicitudesSAE
      */
@@ -17,6 +25,8 @@ public class SolicitudesSAE extends javax.swing.JInternalFrame {
         initComponents();
         this.setSize(744, 426);
         this.setTitle("Solicitudes SAE");
+        actualizarTabla();
+        tf_pendientes.setEditable(false);
     }
 
     /**
@@ -123,17 +133,81 @@ public class SolicitudesSAE extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tf_telefonoActionPerformed
 
     private void btn_solicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_solicitarActionPerformed
-        // TODO add your handling code here:
+        // Registrar solicitud
+        if (solicitudes.size() < cantidadMaxima) {
+            String telefono = tf_telefono.getText();
+            if (telefono.equals("")) {
+                JOptionPane.showMessageDialog(this, "Campo vacío, ingrese su número de teléfono");
+            } else {
+                if (validarNumeroTelefonico(telefono)) {
+                    String tipo = cb_tipo.getSelectedItem().toString();
+                    solicitudes.add(new Solicitud(tipo, telefono));
+                    // Actualizar pendientes y tabla
+                    actualizarTabla();
+                    // Limpiar campos
+                    cb_tipo.setSelectedIndex(0);
+                    tf_telefono.setText("");
+
+                    JOptionPane.showMessageDialog(this,
+                            "Te llamaremos pronto al " + telefono + " para atender tu solicitud sobre " + tipo);
+                } else {
+                    JOptionPane.showMessageDialog(this, "El número telefónico no es válido");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Inténtalo más tarde");
+        }
     }//GEN-LAST:event_btn_solicitarActionPerformed
 
     private void btn_llamarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_llamarActionPerformed
-        // TODO add your handling code here:
+        // Responder solicitud
+        if (solicitudes.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No hay solicitudes pendientes");
+        } else {
+            Solicitud solicitud = solicitudes.remove();
+            JOptionPane.showMessageDialog(this, "Llamando al " + solicitud.getTelefono() + "...");
+            // Actualizando pendientes y tabla
+            actualizarTabla();
+
+            JOptionPane.showMessageDialog(this, "Solicitud sobre " + solicitud.getTipo() + " atendida");
+        }
     }//GEN-LAST:event_btn_llamarActionPerformed
 
     private void btn_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_infoActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this, "Ejemplo de número a ingresar:\n994 622 032\n(Sin espacios todo junto)");
     }//GEN-LAST:event_btn_infoActionPerformed
+    
+    public void actualizarTabla() {
+        // Actualizando pendientes
+        tf_pendientes.setText(String.valueOf(solicitudes.size()));
+        // Actualizando tabla
+        modelo.removeAllElements();
+        lst_solicitudes.setModel(modelo);
+        for (Solicitud solicitud : solicitudes) {
+            modelo.addElement(solicitud.toString());
+        }
+    }
 
+    private boolean validarNumeroTelefonico(String numeroTelefonico) {
+        // Verificar si la longitud del número es igual a 9
+        if (numeroTelefonico.length() != 9) {
+            return false;
+        }
+
+        // Verificar que el primer dígito sea 9
+        if (numeroTelefonico.charAt(0) != '9') {
+            return false;
+        }
+
+        // Verificar que todos los caracteres sean dígitos numéricos
+        for (int i = 1; i < numeroTelefonico.length(); i++) {
+            if (!Character.isDigit(numeroTelefonico.charAt(i))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_info;
