@@ -56,10 +56,15 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btn_sae, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        btn_notas_cola.setText("Registro de notas (colas)");
+        btn_notas_cola.setText("Registro de notas (cola)");
+        btn_notas_cola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_notas_colaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_notas_cola, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
-        btn_notas_pila.setText("Registro de notas (pilas)");
+        btn_notas_pila.setText("Registro de notas (pila)");
         getContentPane().add(btn_notas_pila, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         btn_evaluador.setText("Evaluador");
@@ -103,6 +108,12 @@ public class Principal extends javax.swing.JFrame {
         panel.add(ventana);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_evaluadorActionPerformed
+
+    private void btn_notas_colaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_notas_colaActionPerformed
+        NotasCola ventana = new NotasCola();
+        panel.add(ventana);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btn_notas_colaActionPerformed
 
     /**
      * @param args the command line arguments
