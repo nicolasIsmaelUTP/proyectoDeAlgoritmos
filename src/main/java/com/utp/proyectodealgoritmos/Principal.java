@@ -15,7 +15,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-        this.setSize(1000,600);
+        this.setSize(1000, 600);
         this.setLocationRelativeTo(null);
         this.setTitle("Proyecto");
         this.setResizable(false);
@@ -41,6 +41,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_asistencia.setText("Registro de asistencia");
+        btn_asistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_asistenciaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_asistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         btn_sae.setText("Solicitudes SAE");
@@ -81,6 +86,12 @@ public class Principal extends javax.swing.JFrame {
         panel.add(ventana);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_saeActionPerformed
+
+    private void btn_asistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_asistenciaActionPerformed
+        RegistroDeAsistencia ventana = new RegistroDeAsistencia();
+        panel.add(ventana);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btn_asistenciaActionPerformed
 
     /**
      * @param args the command line arguments
