@@ -63,6 +63,11 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().add(btn_notas_pila, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         btn_evaluador.setText("Evaluador");
+        btn_evaluador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_evaluadorActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_evaluador, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
         javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
@@ -92,6 +97,12 @@ public class Principal extends javax.swing.JFrame {
         panel.add(ventana);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_asistenciaActionPerformed
+
+    private void btn_evaluadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_evaluadorActionPerformed
+        Evaluador ventana = new Evaluador();
+        panel.add(ventana);
+        ventana.setVisible(true);
+    }//GEN-LAST:event_btn_evaluadorActionPerformed
 
     /**
      * @param args the command line arguments
