@@ -118,22 +118,22 @@ public class RegistroDeAsistencia extends javax.swing.JInternalFrame {
         getContentPane().add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 372, -1, -1));
 
         btn_apilar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btn_apilar.setText("Registrar Matrícula");
+        btn_apilar.setText("Anotar");
         btn_apilar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_apilarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_apilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 183, 230, -1));
+        getContentPane().add(btn_apilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 183, 140, -1));
 
         btn_desapilar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        btn_desapilar.setText("Desmatricular");
+        btn_desapilar.setText("Eliminar");
         btn_desapilar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_desapilarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_desapilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 227, 230, -1));
+        getContentPane().add(btn_desapilar, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 227, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel6.setText("Alumnos registrados:");
