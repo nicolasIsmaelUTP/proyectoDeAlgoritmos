@@ -23,7 +23,7 @@ public class NotasCola extends javax.swing.JInternalFrame {
      */
     public NotasCola() {
         initComponents();
-        this.setSize(379, 323);
+        this.setSize(486, 433);
         this.setTitle("Notas Cola");
     }
 
@@ -36,7 +36,7 @@ public class NotasCola extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -47,8 +47,10 @@ public class NotasCola extends javax.swing.JInternalFrame {
         lst_cola = new javax.swing.JList<>();
         btn_ordenar = new javax.swing.JButton();
         btn_promedio = new javax.swing.JButton();
-        btn_min = new javax.swing.JButton();
-        btn_max = new javax.swing.JButton();
+        txt_max = new javax.swing.JTextField();
+        txt_min = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -100,22 +102,14 @@ public class NotasCola extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btn_promedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, -1, -1));
+        getContentPane().add(txt_max, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 90, -1));
+        getContentPane().add(txt_min, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 90, -1));
 
-        btn_min.setText("Minimo");
-        btn_min.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_minActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_min, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
+        jLabel2.setText("Max");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, -1));
 
-        btn_max.setText("Maximo");
-        btn_max.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_maxActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_max, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+        jLabel3.setText("Min");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -232,9 +226,30 @@ public class NotasCola extends javax.swing.JInternalFrame {
             modelo.addElement(tf_nota.getText());
             lst_cola.setModel(modelo);
             tf_nota.setText("");
+            int valormax = -9999;
+            int valormin = 9999;
+            for (String i : cola) {
+                if (Integer.parseInt(i) > valormax) {
+                    valormax = Integer.parseInt(i);
+                } 
+                if (Integer.parseInt(i) < valormin) {
+                    // Recorriendo la cola
+
+                    valormin = Integer.parseInt(i);
+                }
+
+                String valmx = String.valueOf(valormax);
+                txt_max.setText(valmx);
+                String valmn = String.valueOf(valormin);
+                txt_min.setText(valmn);
+
+            }
+
         } else {
             JOptionPane.showMessageDialog(null, "La nota no es valida");
         }
+
+        // Recorriendo la cola
     }// GEN-LAST:event_btn_encolarActionPerformed
 
     private void btn_desencolarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_desencolarActionPerformed
@@ -271,13 +286,15 @@ public class NotasCola extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_desencolar;
     private javax.swing.JButton btn_encolar;
-    private javax.swing.JButton btn_max;
-    private javax.swing.JButton btn_min;
     private javax.swing.JButton btn_ordenar;
     private javax.swing.JButton btn_promedio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> lst_cola;
     private javax.swing.JTextField tf_nota;
+    private javax.swing.JTextField txt_max;
+    private javax.swing.JTextField txt_min;
     // End of variables declaration//GEN-END:variables
 }
