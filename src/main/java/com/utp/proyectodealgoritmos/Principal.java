@@ -36,6 +36,7 @@ public class Principal extends javax.swing.JFrame {
         btn_notas_pila = new javax.swing.JButton();
         btn_evaluador = new javax.swing.JButton();
         panel = new javax.swing.JDesktopPane();
+        btn_arbol = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -93,6 +94,14 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 0, 790, 600));
 
+        btn_arbol.setText("Arbol binario");
+        btn_arbol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_arbolActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_arbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -125,6 +134,12 @@ public class Principal extends javax.swing.JFrame {
         panel.add(ventana);
         ventana.setVisible(true);
     }//GEN-LAST:event_btn_notas_pilaActionPerformed
+
+    private void btn_arbolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_arbolActionPerformed
+       ArbolNotas ventana = new ArbolNotas();
+       panel.add(ventana);
+       ventana.setVisible(true);
+    }//GEN-LAST:event_btn_arbolActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,6 +177,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_arbol;
     private javax.swing.JButton btn_asistencia;
     private javax.swing.JButton btn_evaluador;
     private javax.swing.JButton btn_notas_cola;
