@@ -39,7 +39,7 @@ public class NotasPila extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         tf_tamano = new javax.swing.JTextField();
@@ -56,8 +56,10 @@ public class NotasPila extends javax.swing.JInternalFrame {
         btn_desapilar = new javax.swing.JButton();
         btn_ordenar = new javax.swing.JButton();
         btn_promedio = new javax.swing.JButton();
-        btn_minimo = new javax.swing.JButton();
-        btn_maximo = new javax.swing.JButton();
+        txt_max = new javax.swing.JTextField();
+        txt_min = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -70,7 +72,7 @@ public class NotasPila extends javax.swing.JInternalFrame {
                 btn_tamanoActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_tamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 205, -1, -1));
+        getContentPane().add(btn_tamano, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, -1));
 
         btn_destruir.setText("Destruir");
         btn_destruir.addActionListener(new java.awt.event.ActionListener() {
@@ -136,22 +138,14 @@ public class NotasPila extends javax.swing.JInternalFrame {
             }
         });
         getContentPane().add(btn_promedio, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 60, -1, -1));
+        getContentPane().add(txt_max, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 60, -1));
+        getContentPane().add(txt_min, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 60, -1));
 
-        btn_minimo.setText("Minimo");
-        btn_minimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_minimoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_minimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, -1));
+        jLabel3.setText("Max :");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
 
-        btn_maximo.setText("Maximo");
-        btn_maximo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_maximoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btn_maximo, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 140, -1, -1));
+        jLabel4.setText("Min :");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -248,8 +242,11 @@ public class NotasPila extends javax.swing.JInternalFrame {
 
     private void btn_apilarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_apilarActionPerformed
         // Apilar
-        if (pila.size() < tamano) {
+        int valormax = -9999;
+        int valormin = 9999;
+              if (pila.size() < tamano) {
             String texto_ingresado = tf_nota.getText();
+
             if (!texto_ingresado.equals("") && esNotaValida(texto_ingresado)) {
                 pila.push(texto_ingresado);
                 actualizarLista();
@@ -261,6 +258,22 @@ public class NotasPila extends javax.swing.JInternalFrame {
         }
         tf_nota.setText("");
         tf_nota.requestFocus();
+          for (String i : pila) {
+            if (Integer.parseInt(i) > valormax) {
+                valormax = Integer.parseInt(i);
+            }
+            if (Integer.parseInt(i) < valormin) {
+                // Recorriendo la cola
+
+                valormin = Integer.parseInt(i);
+            }
+
+            String valmx = String.valueOf(valormax);
+            txt_max.setText(valmx);
+            String valmn = String.valueOf(valormin);
+            txt_min.setText(valmn);
+        }
+
     }// GEN-LAST:event_btn_apilarActionPerformed
 
     private boolean esNotaValida(String nota) {
@@ -292,6 +305,9 @@ public class NotasPila extends javax.swing.JInternalFrame {
             actualizarLista();
         }
         tf_nota.requestFocus();
+        
+        txt_max.setText("");
+        txt_min.setText("");
     }// GEN-LAST:event_btn_desapilarActionPerformed
 
     private void btn_ordenarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_ordenarActionPerformed
@@ -358,18 +374,20 @@ public class NotasPila extends javax.swing.JInternalFrame {
     private javax.swing.JButton btn_apilar;
     private javax.swing.JButton btn_desapilar;
     private javax.swing.JButton btn_destruir;
-    private javax.swing.JButton btn_maximo;
-    private javax.swing.JButton btn_minimo;
     private javax.swing.JButton btn_ordenar;
     private javax.swing.JButton btn_promedio;
     private javax.swing.JButton btn_tamano;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lst_pila;
     private javax.swing.JTextField tf_caben;
     private javax.swing.JTextField tf_cantidad;
     private javax.swing.JTextField tf_nota;
     private javax.swing.JTextField tf_tamano;
+    private javax.swing.JTextField txt_max;
+    private javax.swing.JTextField txt_min;
     // End of variables declaration//GEN-END:variables
 }

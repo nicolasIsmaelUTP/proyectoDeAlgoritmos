@@ -261,6 +261,9 @@ public class NotasCola extends javax.swing.JInternalFrame {
             modelo.remove(0);
             lst_cola.setModel(modelo);
         }
+        
+        txt_max.setText("");
+        txt_min.setText("");
     }// GEN-LAST:event_btn_desencolarActionPerformed
 
     private boolean esNotaValida(String nota) {
