@@ -69,6 +69,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_promedio">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="120" width="120" height="30"/>
@@ -86,6 +89,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_min">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="180" width="110" height="-1"/>
@@ -103,6 +109,9 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="tf_max">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="230" width="110" height="-1"/>
@@ -135,10 +144,13 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_ordenar">
+    <Component class="javax.swing.JButton" name="btn_recorrer">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ordenar arbol"/>
+        <Property name="text" type="java.lang.String" value="Recorrer arbol"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_recorrerActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="180" y="290" width="-1" height="-1"/>
