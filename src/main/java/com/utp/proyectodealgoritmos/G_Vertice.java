@@ -12,6 +12,7 @@ package com.utp.proyectodealgoritmos;
 import java.util.Objects;
 
 public class G_Vertice {
+    
     private String etiqueta;
 
     public G_Vertice(String etiqueta) {
@@ -23,6 +24,7 @@ public class G_Vertice {
     }
 
     @Override
+    // Comprueba si el objeto actual es igual al objeto pasado como argumento.
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -30,11 +32,13 @@ public class G_Vertice {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
+        // Convierte el objeto pasado como argumento a la clase G_Vertice para comparar sus etiquetas.
         G_Vertice vertice = (G_Vertice) obj;
         return Objects.equals(etiqueta, vertice.etiqueta);
     }
 
     @Override
+    // Devuelve un valor de código hash basado en la etiqueta del vértice.
     public int hashCode() {
         return Objects.hash(etiqueta);
     }
