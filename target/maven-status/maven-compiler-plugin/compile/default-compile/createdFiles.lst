@@ -1,4 +1,5 @@
 com\utp\proyectodealgoritmos\BinaryTreeViewer$DrawableNode.class
+com\utp\proyectodealgoritmos\G_Arista.class
 com\utp\proyectodealgoritmos\ArbolNotas$2.class
 com\utp\proyectodealgoritmos\Principal$6.class
 com\utp\proyectodealgoritmos\BinaryTreeViewer$6.class
@@ -6,6 +7,7 @@ com\utp\proyectodealgoritmos\BinaryTreeViewer$ValueFunction.class
 com\utp\proyectodealgoritmos\BinaryTreeViewer$3.class
 com\utp\proyectodealgoritmos\NotasPila.class
 com\utp\proyectodealgoritmos\Evaluador$2.class
+com\utp\proyectodealgoritmos\ProyectoGrafo.class
 com\utp\proyectodealgoritmos\NotasPila$6.class
 com\utp\proyectodealgoritmos\Principal$2.class
 com\utp\proyectodealgoritmos\SolicitudesSAE$2.class
@@ -33,10 +35,12 @@ com\utp\proyectodealgoritmos\Evaluador.class
 com\utp\proyectodealgoritmos\NotasCola$5.class
 com\utp\proyectodealgoritmos\NotasPila$2.class
 com\utp\proyectodealgoritmos\BinaryTreeViewer$1.class
+com\utp\proyectodealgoritmos\G_Vertice.class
 com\utp\proyectodealgoritmos\Principal$4.class
 com\utp\proyectodealgoritmos\NotasPila$4.class
 com\utp\proyectodealgoritmos\NotasCola$3.class
 com\utp\proyectodealgoritmos\RegistroDeAsistencia$2.class
+com\utp\proyectodealgoritmos\Principal$8.class
 com\utp\proyectodealgoritmos\BinaryTreeViewer$4.class
 com\utp\proyectodealgoritmos\Evaluador$1.class
 com\utp\proyectodealgoritmos\NotasPila$1.class
@@ -48,9 +52,9 @@ com\utp\proyectodealgoritmos\NodoArbol.class
 com\utp\proyectodealgoritmos\Evaluador$3.class
 com\utp\proyectodealgoritmos\NotasCola$4.class
 com\utp\proyectodealgoritmos\Principal$3.class
-com\utp\proyectodealgoritmos\BTVTester.class
 com\utp\proyectodealgoritmos\RegistroDeAsistencia$3.class
 com\utp\proyectodealgoritmos\NotasPila$7.class
 com\utp\proyectodealgoritmos\SolicitudesSAE$3.class
 com\utp\proyectodealgoritmos\NotasCola.class
+com\utp\proyectodealgoritmos\G_Grafo.class
 com\utp\proyectodealgoritmos\SolicitudesSAE.class

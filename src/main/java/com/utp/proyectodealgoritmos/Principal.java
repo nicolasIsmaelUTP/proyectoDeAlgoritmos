@@ -37,6 +37,7 @@ public class Principal extends javax.swing.JFrame {
         btn_evaluador = new javax.swing.JButton();
         panel = new javax.swing.JDesktopPane();
         btn_arbol = new javax.swing.JButton();
+        btn_grafos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,6 +103,14 @@ public class Principal extends javax.swing.JFrame {
         });
         getContentPane().add(btn_arbol, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
+        btn_grafos.setText("Proyecto de grafos");
+        btn_grafos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_grafosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_grafos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -140,6 +149,11 @@ public class Principal extends javax.swing.JFrame {
        panel.add(ventana);
        ventana.setVisible(true);
     }//GEN-LAST:event_btn_arbolActionPerformed
+
+    private void btn_grafosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_grafosActionPerformed
+       ProyectoGrafo programa = new ProyectoGrafo();
+       programa.main();
+    }//GEN-LAST:event_btn_grafosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,6 +194,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_arbol;
     private javax.swing.JButton btn_asistencia;
     private javax.swing.JButton btn_evaluador;
+    private javax.swing.JButton btn_grafos;
     private javax.swing.JButton btn_notas_cola;
     private javax.swing.JButton btn_notas_pila;
     private javax.swing.JButton btn_sae;

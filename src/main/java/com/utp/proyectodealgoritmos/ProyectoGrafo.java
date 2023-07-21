@@ -14,10 +14,7 @@ import java.util.Scanner;
  */
 public class ProyectoGrafo {
 
-    /**
-     * @param args the command line arguments
-     */
-       public static void main(String[] args) {
+       public static void main() {
         Scanner scanner = new Scanner(System.in);
         G_Grafo grafo = new G_Grafo();
 
